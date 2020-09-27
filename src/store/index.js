@@ -10,7 +10,8 @@ export default new Vuex.Store({
     categories: {},
     offers: [],
     offers_loading: true,
-    dotd_loading: true
+    dotd_loading: true,
+    cat_loading:true
   },
 
 
@@ -28,6 +29,7 @@ export default new Vuex.Store({
           .then(response => {
             state.dotd = response.data.dotdList;
             state.dotd_loading = false;
+            console.log("got dotd");
           })
           .catch(error => {
             console.log(error)
@@ -46,6 +48,7 @@ export default new Vuex.Store({
         .then(response => {
           console.log("mut :\n ", response);
           state.categories = response.data.apiGroups.affiliate.apiListings;
+          state.cat_loading=false;
         })
         .catch(error => {
           console.log(error)

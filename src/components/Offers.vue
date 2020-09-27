@@ -2,7 +2,7 @@
   <div>
     <v-row dense>
       <v-col v-for="(offer, i) in offers" :key="i" :cols="i % 11 == 0 ? 12 : 6">
-        <v-card>
+        <v-card tile elevation="0" outlined :href="offer.url" target="_blank">
           <v-img
             contain
             :src="offer.imageUrls[3].url"
@@ -17,9 +17,8 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn small text>
-                Check Now
-              <!-- <v-icon>mdi-share-variant</v-icon> -->
+            <v-btn small text color="primary" block width="100%" style="overflow-x: hidden; text-emphasis: wrap;">
+               {{truncateString(offer.title) }}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -36,6 +35,12 @@ export default {
   }),
   methods: {
     ...mapActions(["GetOffers"]),
+    truncateString(str) {
+      if (str.length <= 18) {
+        return str;
+      }
+      return str.slice(0,18) + "...";
+    },
   },
   created() {
     this.GetOffers();

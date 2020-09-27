@@ -62,7 +62,7 @@ export default {
     item: 1,
     items: [
       { text: "Home", icon: "mdi-home", link:"/" },
-      { text: "Deal of the Day", icon: "mdi-shopping" , link:"dotd"},
+      { text: "Deal of the Day", icon: "mdi-shopping" , link:"deal-of-the-day"},
       { text: "Categories", icon: "mdi-view-dashboard",link: "categories" },
       { text: "About", icon: "mdi-information" ,link:"about"},
     ],
@@ -81,6 +81,9 @@ export default {
   outline: none;
 }
 .v-app-bar.primary{
+  z-index: 99;
+}
+.v-navigation-drawer{
   z-index: 999;
 }
 </style>
