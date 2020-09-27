@@ -18,7 +18,7 @@
             <strong>{{ deal.description }}</strong>
             <br />
             <br />
-            <v-btn small light>Get Now</v-btn>
+            <v-btn small color="primary">Get Now</v-btn>
           </div>
         </div>
       </v-carousel-item>

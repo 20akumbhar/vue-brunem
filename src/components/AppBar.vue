@@ -40,7 +40,7 @@
       <v-list shaped>
         <v-subheader>BRUNEM</v-subheader>
         <v-list-item-group v-model="item" color="primary">
-          <v-list-item v-for="(item, i) in items" :key="i">
+          <v-list-item v-for="(item, i) in items" :key="i" :to="item.link">
             <v-list-item-icon>
               <v-icon v-text="item.icon"></v-icon>
             </v-list-item-icon>
@@ -61,10 +61,10 @@ export default {
     search: false,
     item: 1,
     items: [
-      { text: "Home", icon: "mdi-home" },
-      { text: "Deal of the Day", icon: "mdi-shopping" },
-      { text: "Categories", icon: "mdi-view-dashboard" },
-      { text: "About", icon: "mdi-information" },
+      { text: "Home", icon: "mdi-home", link:"/" },
+      { text: "Deal of the Day", icon: "mdi-shopping" , link:"dotd"},
+      { text: "Categories", icon: "mdi-view-dashboard",link: "categories" },
+      { text: "About", icon: "mdi-information" ,link:"about"},
     ],
   }),
 };
